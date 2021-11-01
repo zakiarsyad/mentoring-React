@@ -1,7 +1,7 @@
 import TodoItem from "./todoItem"
 
 const TodoList = (props) => {
-  const { items } = props;
+  const { items, handlePlus, handleDelete } = props;
 
   return (
     <div className="bg-red-300">
@@ -11,7 +11,11 @@ const TodoList = (props) => {
       ) : (
         <ul>
           {items.map((item) => {
-            return <TodoItem item={item} />;
+            return <TodoItem
+            item={item}
+            handleDelete={handleDelete}
+            handlePlus={handlePlus}
+          />;
           })}
         </ul>
       )}
